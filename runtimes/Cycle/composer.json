@@ -1,0 +1,11 @@
+{
+    "name": "divergence/the-php-bench-runtime-cycle",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "cycle/database": "*"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build Cycle"
+    }
+}

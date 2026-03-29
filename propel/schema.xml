@@ -1,0 +1,82 @@
+<database
+	name="default"
+	defaultIdMethod="native"
+	namespace="ThePHPBench\Propel2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd"
+>
+	<table name="canaries" phpName="Canary">
+		<column name="canary_id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+		<column name="bool_flag" type="boolean" required="true"/>
+		<column name="small_int" type="smallint" required="true"/>
+		<column name="int_value" type="integer" required="true"/>
+		<column name="big_int" type="bigint" required="true"/>
+		<column name="float_value" type="float" required="true"/>
+		<column name="double_value" type="double" required="true"/>
+		<column name="decimal_value" type="decimal" size="12" scale="4" required="true"/>
+		<column name="fixed_char_8" type="char" size="8" required="true"/>
+		<column name="fixed_char_16" type="char" size="16" required="true"/>
+		<column name="string_short" type="varchar" size="32" required="true"/>
+		<column name="string_medium" type="varchar" size="128" required="true"/>
+		<column name="string_long" type="varchar" size="512" required="true"/>
+		<column name="text_value" type="longvarchar" required="true"/>
+		<column name="date_value" type="date" required="true"/>
+		<column name="datetime_value" type="timestamp" required="false"/>
+		<column name="nullable_string" type="varchar" size="64" required="false"/>
+		<column name="nullable_int" type="integer" required="false"/>
+	</table>
+
+	<table name="int_fixed_records" phpName="IntFixed">
+		<column name="int_fixed_id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+		<column name="i01" type="integer" required="true"/>
+		<column name="i02" type="integer" required="true"/>
+		<column name="i03" type="integer" required="true"/>
+		<column name="i04" type="integer" required="true"/>
+		<column name="i05" type="integer" required="true"/>
+		<column name="i06" type="integer" required="true"/>
+		<column name="i07" type="integer" required="true"/>
+		<column name="i08" type="integer" required="true"/>
+		<column name="i09" type="integer" required="true"/>
+		<column name="i10" type="integer" required="true"/>
+		<column name="i11" type="integer" required="true"/>
+		<column name="i12" type="integer" required="true"/>
+	</table>
+
+	<table name="float_fixed_records" phpName="FloatFixed">
+		<column name="float_fixed_id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+		<column name="f01" type="float" required="true"/>
+		<column name="f02" type="float" required="true"/>
+		<column name="d01" type="double" required="true"/>
+		<column name="d02" type="double" required="true"/>
+		<column name="n01" type="decimal" size="10" scale="2" required="true"/>
+		<column name="n02" type="decimal" size="12" scale="4" required="true"/>
+		<column name="n03" type="decimal" size="18" scale="6" required="true"/>
+		<column name="n04" type="decimal" size="20" scale="8" required="true"/>
+	</table>
+
+	<table name="string_fixed_records" phpName="StringFixed">
+		<column name="string_fixed_id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+		<column name="c08_01" type="char" size="8" required="true"/>
+		<column name="c08_02" type="char" size="8" required="true"/>
+		<column name="c16_01" type="char" size="16" required="true"/>
+		<column name="c16_02" type="char" size="16" required="true"/>
+		<column name="c32_01" type="char" size="32" required="true"/>
+		<column name="c32_02" type="char" size="32" required="true"/>
+		<column name="c64_01" type="char" size="64" required="true"/>
+		<column name="c64_02" type="char" size="64" required="true"/>
+	</table>
+
+	<table name="string_variable_records" phpName="StringVariable">
+		<column name="string_variable_id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+		<column name="name" type="varchar" size="64" required="true"/>
+		<column name="title" type="varchar" size="128" required="true"/>
+		<column name="email" type="varchar" size="160" required="true"/>
+		<column name="company" type="varchar" size="160" required="true"/>
+		<column name="city" type="varchar" size="64" required="true"/>
+		<column name="region" type="varchar" size="64" required="true"/>
+		<column name="postal_code" type="varchar" size="32" required="true"/>
+		<column name="country" type="varchar" size="64" required="true"/>
+		<column name="phone" type="varchar" size="32" required="true"/>
+		<column name="notes" type="longvarchar" required="true"/>
+	</table>
+</database>

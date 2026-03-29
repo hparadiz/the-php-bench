@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$repoRoot = \dirname(__DIR__, 3);
+$_SERVER['argv'] = [$argv[0], 'Yii', $argv[1] ?? ''];
+$argc = \count($_SERVER['argv']);
+$argv = $_SERVER['argv'];
+
+require $repoRoot . '/src/RuntimeWorkerEntrypoint.php';

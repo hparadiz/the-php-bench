@@ -1,0 +1,104 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+if (! \function_exists('base_path'))
+	{
+	function base_path(string $path = '') : string
+		{
+		$root = \dirname(__DIR__);
+
+		return '' === $path ? $root : $root . '/' . $path;
+		}
+	}
+
+$application = new Symfony\Component\Console\Application('The PHP Bench', \ThePHPBench\ApplicationVersion::VERSION);
+$application->getDefinition()->addOption(
+	new Symfony\Component\Console\Input\InputOption('runtimes', null, Symfony\Component\Console\Input\InputOption::VALUE_NONE, 'List available runtimes and exit')
+);
+$application->add(new \ThePHPBench\Console\BenchmarkCommand());
+$application->add(new \ThePHPBench\Console\ResultsCommand());
+$application->add(new \ThePHPBench\Console\ResultsMarkdownCommand());
+$application->add(new \ThePHPBench\Console\RuntimeListCommand());
+$application->add(new \ThePHPBench\Console\RuntimeListUsageCommand());
+$application->add(new \ThePHPBench\Console\RuntimeBuildCommand());
+$application->add(new \ThePHPBench\Console\RuntimeUseCommand());
+$application->add(new \ThePHPBench\Console\RuntimeInstallVendorsCommand());
+$application->add(new \ThePHPBench\Console\RuntimeSeedVendorsCommand());
+$application->add(new \ThePHPBench\Console\RuntimeTestCommand());
+$application->add(new \ThePHPBench\Console\PharBuildControllerCommand());
+$application->add(new \ThePHPBench\Console\PharBuildBundleCommand());
+$application->add(new \ThePHPBench\Console\SystemManifestGenerateCommand());
+$application->add(new \ThePHPBench\Console\ModelGenerateCanonicalCommand());
+$application->add(new \ThePHPBench\Console\SourceRefreshDivergenceV3Command());
+$application->add(new \ThePHPBench\Console\DbSetupMysqlCommand());
+$application->add(new \ThePHPBench\Console\UploadResultsCommand());
+$application->add(new \ThePHPBench\Console\SeedDumpCommand());
+$application->add(new \ThePHPBench\Console\SeedDumpAllCommand());
+$application->add(new \ThePHPBench\Console\SeedPreviewCommand());
+
+if (\in_array('--runtimes', $argv, true))
+	{
+	$runtimes = \ThePHPBench\RuntimeRegistry::availableRuntimes();
+	$headers = [
+		'name' => 'Runtime',
+		'composer_name' => 'Composer Name',
+		'version' => 'Version',
+		'package_count' => 'Packages',
+		'phar_built' => 'PHAR',
+		'homepage' => 'Homepage',
+	];
+	$widths = [];
+
+	foreach ($headers as $key => $label)
+		{
+		$widths[$key] = \strlen($label);
+		}
+
+	foreach ($runtimes as $runtime)
+		{
+		$widths['name'] = \max($widths['name'], \strlen($runtime['name']));
+		$widths['name'] = \max($widths['name'], \strlen($runtime['display_name']));
+		$widths['composer_name'] = \max($widths['composer_name'], \strlen($runtime['composer_name']));
+		$widths['version'] = \max($widths['version'], \strlen($runtime['version']));
+		$widths['package_count'] = \max($widths['package_count'], \strlen((string)$runtime['package_count']));
+		$widths['phar_built'] = \max($widths['phar_built'], \strlen($runtime['phar_built'] ? 'built' : 'missing'));
+		$widths['homepage'] = \max($widths['homepage'], \strlen($runtime['homepage']));
+		}
+
+	\fwrite(
+		\STDOUT,
+		\sprintf(
+			"%-{$widths['name']}s  %-{$widths['composer_name']}s  %-{$widths['version']}s  %{$widths['package_count']}s  %-{$widths['phar_built']}s  %s\n",
+			$headers['name'],
+			$headers['composer_name'],
+			$headers['version'],
+			$headers['package_count'],
+			$headers['phar_built'],
+			$headers['homepage']
+		)
+	);
+
+	foreach ($runtimes as $runtime)
+		{
+		\fwrite(
+			\STDOUT,
+			\sprintf(
+				"%-{$widths['name']}s  %-{$widths['composer_name']}s  %-{$widths['version']}s  %{$widths['package_count']}d  %-{$widths['phar_built']}s  %s\n",
+				$runtime['display_name'],
+				$runtime['composer_name'],
+				$runtime['version'],
+				$runtime['package_count'],
+				$runtime['phar_built'] ? 'built' : 'missing',
+				$runtime['homepage']
+			)
+		);
+		}
+
+	exit(0);
+	}
+
+$application->run();

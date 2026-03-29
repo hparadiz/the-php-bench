@@ -1,0 +1,11 @@
+{
+    "name": "divergence/the-php-bench-runtime-atlas",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "atlas/pdo": "*"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build Atlas"
+    }
+}

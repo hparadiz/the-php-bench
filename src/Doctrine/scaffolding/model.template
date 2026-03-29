@@ -1,0 +1,15 @@
+<?php
+
+namespace ThePHPBench\Doctrine\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * This code is automatically generated.  See ThePHPBench\Doctrine\scaffolding\generateModels.php.  Do not update by hand.
+ */
+#[\Doctrine\ORM\Mapping\Entity]
+#[\Doctrine\ORM\Mapping\Table(name: "~TABLE~")]
+class ~CLASS~
+	{
+~FIELDS~
+	}

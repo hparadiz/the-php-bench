@@ -1,0 +1,13 @@
+{
+    "name": "divergence/the-php-bench-runtime-propel2",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "propel/propel": "dev-master"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build Propel2"
+    }
+}

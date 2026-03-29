@@ -1,0 +1,52 @@
+{
+    "name": "divergence/the-php-bench",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "description": "A benchmark suite to test various SQL servers and PHP ORM libraries",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ThePHPBench\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Henry Paradiz",
+            "email": "henry.paradiz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/console": "^7.4",
+        "react/child-process": "^0.6.7",
+        "react/event-loop": "^1.6"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "*",
+        "phpfui/phpunit-syntax-coverage": "^1.0"
+    },
+    "scripts": {
+        "compile-phar:controller": "composer --working-dir=runtimes/Controller run compile-phar",
+        "compile-runtime-phars": [
+            "composer --working-dir=runtimes/ActiveRecord-2.0.6 run compile-phar",
+            "composer --working-dir=runtimes/Atlas run compile-phar",
+            "composer --working-dir=runtimes/Cake-5.3.3 run compile-phar",
+            "composer --working-dir=runtimes/CakeCached-5.3.3 run compile-phar",
+            "composer --working-dir=runtimes/Cycle run compile-phar",
+            "composer --working-dir=runtimes/Doctrine-3.6.2 run compile-phar",
+            "composer --working-dir=runtimes/Eloquent-v13.2.0 run compile-phar",
+            "composer --working-dir=runtimes/PHPFUI-V3.0.3 run compile-phar",
+            "composer --working-dir=runtimes/PHPFUIBatch-V3.0.3 run compile-phar",
+            "composer --working-dir=runtimes/Propel2-6cb272b6 run compile-phar",
+            "composer --working-dir=runtimes/RedBean-v5.7.5 run compile-phar",
+            "composer --working-dir=runtimes/Divergence-v2.1.4 run compile-phar",
+            "composer --working-dir=runtimes/Divergence-v3.2.0 run compile-phar",
+            "composer --working-dir=runtimes/Yii run compile-phar"
+        ],
+        "compile-phars": [
+            "@compile-phar:controller",
+            "@compile-runtime-phars"
+        ]
+    }
+}

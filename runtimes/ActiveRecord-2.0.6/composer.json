@@ -1,0 +1,11 @@
+{
+    "name": "divergence/the-php-bench-runtime-activerecord",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "php-patterns/activerecord": "^2.0"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build ActiveRecord"
+    }
+}

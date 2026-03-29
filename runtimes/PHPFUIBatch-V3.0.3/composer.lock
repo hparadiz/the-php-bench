@@ -1,0 +1,193 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "28cbf602965a0893e68f531f9cbacc83",
+    "packages": [
+        {
+            "name": "phpfui/orm",
+            "version": "V3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpfui/ORM.git",
+                "reference": "b400d4b4767de991d426daf512d7655bbfceb493"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpfui/ORM/zipball/b400d4b4767de991d426daf512d7655bbfceb493",
+                "reference": "b400d4b4767de991d426daf512d7655bbfceb493",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1 <8.6",
+                "phpfui/translation": "^1.0",
+                "psr/log": "^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "*",
+                "nesbot/carbon": "*",
+                "phpfui/phpunit-syntax-coverage": "^1.0",
+                "phpstan/phpstan": "*",
+                "phpunit/phpunit": "<13.0",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPFUI\\": "src/PHPFUI/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruce Wells",
+                    "email": "brucekwells@gmail.com"
+                }
+            ],
+            "description": "A Fast, Lightweight and Minimal ORM for MySQL, SQLite, MariaDB and PostGre",
+            "homepage": "http://www.phpfui.com/?n=PHPFUI%5CORM",
+            "keywords": [
+                "activerecord",
+                "fast",
+                "lightweight",
+                "mapper",
+                "mapping",
+                "mariadb",
+                "model",
+                "mysql",
+                "object",
+                "orm",
+                "postgre",
+                "relational",
+                "sql",
+                "sqlite"
+            ],
+            "support": {
+                "issues": "https://github.com/phpfui/ORM/issues",
+                "source": "https://github.com/phpfui/ORM/tree/V3.0.3"
+            },
+            "time": "2026-01-25T21:13:46+00:00"
+        },
+        {
+            "name": "phpfui/translation",
+            "version": "V1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpfui/Translation.git",
+                "reference": "e8ab6ae6b6140df34171c1b2a5387f96f6e49e99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpfui/Translation/zipball/e8ab6ae6b6140df34171c1b2a5387f96f6e49e99",
+                "reference": "e8ab6ae6b6140df34171c1b2a5387f96f6e49e99",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4 <8.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "*",
+                "phpfui/phpunit-syntax-coverage": "dev-master",
+                "phpstan/phpstan": "*",
+                "phpunit/phpunit": "<13.0",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPFUI\\Translation\\": "src/PHPFUI/Translation/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruce Wells",
+                    "email": "brucekwells@gmail.com"
+                }
+            ],
+            "description": "Minimal and Fast PHP Object Oriented Translation System",
+            "homepage": "http://www.phpfui.com",
+            "keywords": [
+                "language",
+                "languages",
+                "locale",
+                "translate",
+                "translation"
+            ],
+            "support": {
+                "issues": "https://github.com/phpfui/Translation/issues",
+                "source": "https://github.com/phpfui/Translation/tree/V1.0.3"
+            },
+            "time": "2025-11-07T15:41:31+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/3.0.2"
+            },
+            "time": "2024-09-11T13:17:53+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.1"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

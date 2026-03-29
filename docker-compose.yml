@@ -1,0 +1,64 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: thephpbench-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php_orm_sql_benchmarks
+      MYSQL_USER: benchmark
+      MYSQL_PASSWORD: benchmark
+    ports:
+      - "33060:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -proot --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  mariadb:
+    image: mariadb:11.4
+    container_name: thephpbench-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: php_orm_sql_benchmarks
+      MARIADB_USER: benchmark
+      MARIADB_PASSWORD: benchmark
+    ports:
+      - "33061:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -proot --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    volumes:
+      - mariadb-data:/var/lib/mysql
+
+  postgres:
+    image: postgres:16
+    container_name: thephpbench-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: php_orm_sql_benchmarks
+      POSTGRES_USER: benchmark
+      POSTGRES_PASSWORD: benchmark
+    ports:
+      - "54320:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U benchmark -d php_orm_sql_benchmarks"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  mysql-data:
+  mariadb-data:
+  postgres-data:

@@ -1,0 +1,11 @@
+{
+    "name": "divergence/the-php-bench-runtime-divergencev2",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "divergence/divergence": "2.1.4"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build DivergenceV2"
+    }
+}

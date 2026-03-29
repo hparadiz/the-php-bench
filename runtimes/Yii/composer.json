@@ -1,0 +1,19 @@
+{
+    "name": "divergence/the-php-bench-runtime-yii",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "yidas/yii2-bower-asset": "^2.0",
+        "yiisoft/yii2": "*"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build Yii"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    }
+}

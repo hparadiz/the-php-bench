@@ -1,0 +1,11 @@
+{
+    "name": "divergence/the-php-bench-runtime-redbean",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "gabordemooij/redbean": "^5.7"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build RedBean"
+    }
+}

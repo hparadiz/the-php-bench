@@ -1,0 +1,13 @@
+{
+    "name": "divergence/the-php-bench-runtime-doctrine",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "doctrine/orm": "^3.3",
+        "symfony/cache": "^8.0",
+        "symfony/var-exporter": "^7.4"
+    },
+    "scripts": {
+        "compile-phar": "php -d phar.readonly=0 ../../bin/the-php-bench runtime:build Doctrine"
+    }
+}
