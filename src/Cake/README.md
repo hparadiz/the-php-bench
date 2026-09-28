@@ -2,7 +2,7 @@
 
 ## Status
 
-This adapter is also still on the removed `Employee` model path. [Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/Cake/Tests.php) currently references `\ThePHPBench\Cake\Table\Employee`, so it is not aligned with the new benchmark families yet.
+This adapter is also still on the removed `Employee` model path. [Tests.php](Tests.php) currently references `\ThePHPBench\Cake\Table\Employee`, so it is not aligned with the new benchmark families yet.
 
 ## Implementation details to preserve during the rebuild
 

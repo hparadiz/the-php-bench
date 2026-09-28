@@ -133,11 +133,12 @@ Run the configured benchmark suite:
 ./bin/the-php-bench benchmark
 ```
 
-The benchmark parent now requires each framework runtime PHAR to exist under a versioned path like `dist/runtime-<framework>-<version>.phar` and routes subprocess execution through that artifact. If a runtime PHAR is missing, the runner prints a warning and skips that framework instead of compiling or falling back on the fly. If you refresh root controller dependencies, refresh any runtime dependencies, or update either local Divergence tree, rerun:
+The benchmark parent now requires each framework runtime PHAR to exist under a versioned path like `dist/runtime-<framework>-<version>.phar` and routes subprocess execution through that artifact. If a runtime PHAR is missing, the runner prints a warning and skips that framework instead of compiling or falling back on the fly. The DivergenceV3 runtime uses an export of the staged `../framework` tree so unpublished framework changes can be benchmarked without copying its working-tree artifacts. Refresh that export before reinstalling and rebuilding the runtime:
 
 ```bash
-./bin/the-php-bench runtime:install-vendors
-./bin/the-php-bench runtime:build --all
+./bin/the-php-bench source:export-divergence-v3-runtime
+./bin/the-php-bench runtime:install-vendors DivergenceV3
+php -d phar.readonly=0 ./bin/the-php-bench runtime:build DivergenceV3
 ```
 
 Run a filtered benchmark:

@@ -41,7 +41,7 @@
             "composer --working-dir=runtimes/Propel2-6cb272b6 run compile-phar",
             "composer --working-dir=runtimes/RedBean-v5.7.5 run compile-phar",
             "composer --working-dir=runtimes/Divergence-v2.1.4 run compile-phar",
-            "composer --working-dir=runtimes/Divergence-v3.2.0 run compile-phar",
+            "composer --working-dir=runtimes/Divergence-v3.3.0 run compile-phar",
             "composer --working-dir=runtimes/Yii run compile-phar"
         ],
         "compile-phars": [

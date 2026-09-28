@@ -2,7 +2,7 @@
 
 ## Status
 
-This adapter still targets the removed `Employee` model. [Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/Eloquent/Tests.php) references `\ThePHPBench\Eloquent\Model\Employee`, so the model layer still needs to be rebuilt.
+This adapter still targets the removed `Employee` model. [Tests.php](Tests.php) references `\ThePHPBench\Eloquent\Model\Employee`, so the model layer still needs to be rebuilt.
 
 ## Implementation details to preserve during the rebuild
 

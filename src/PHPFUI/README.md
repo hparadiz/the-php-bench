@@ -2,7 +2,7 @@
 
 ## Status
 
-This adapter still points at the removed `Record\Employee` and `Table\Employee` classes from [Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/PHPFUI/Tests.php). It needs a fresh model layer for the canonical families.
+This adapter still points at the removed `Record\Employee` and `Table\Employee` classes from [Tests.php](Tests.php). It needs a fresh model layer for the canonical families.
 
 ## Implementation details to preserve during the rebuild
 

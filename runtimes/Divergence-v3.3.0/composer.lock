@@ -4,21 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bce36f99ab8861f77dc60907300410ed",
+    "content-hash": "8303da7f86086e099e563d3cbf8d447e",
     "packages": [
         {
             "name": "divergence/divergence",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Divergence/framework.git",
-                "reference": "d8d49d55226e693864243c1b450b7ef984dab1a2"
-            },
+            "version": "3.3.0",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Divergence/framework/zipball/d8d49d55226e693864243c1b450b7ef984dab1a2",
-                "reference": "d8d49d55226e693864243c1b450b7ef984dab1a2",
-                "shasum": ""
+                "type": "path",
+                "url": "../../local/DivergenceV3Runtime",
+                "reference": "594fec7ca657d1cb9ba94b4cb736118fecfc23b5"
             },
             "require": {
                 "filp/whoops": "*",
@@ -46,7 +40,49 @@
                     "Divergence\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Divergence\\Tests\\": "tests/Divergence",
+                    "Divergence\\Tests\\MockSite\\": "tests/MockSite"
+                }
+            },
+            "scripts": {
+                "fix-code": [
+                    "php-cs-fixer fix"
+                ],
+                "test": [
+                    "@test:mysql",
+                    "@test:sqlite",
+                    "@test:pgsql"
+                ],
+                "test:coverage": [
+                    "@test:mysql:coverage",
+                    "@test:sqlite:coverage",
+                    "@test:pgsql:coverage",
+                    "@coverage:merge"
+                ],
+                "test:mysql": [
+                    "DIVERGENCE_TEST_DB=tests-mysql vendor/bin/phpunit"
+                ],
+                "test:sqlite": [
+                    "DIVERGENCE_TEST_DB=tests-sqlite-memory vendor/bin/phpunit"
+                ],
+                "test:pgsql": [
+                    "DIVERGENCE_TEST_DB=tests-pgsql vendor/bin/phpunit"
+                ],
+                "test:mysql:coverage": [
+                    "mkdir -p build/coverage build/logs && XDEBUG_MODE=coverage DIVERGENCE_TEST_DB=tests-mysql vendor/bin/phpunit --coverage-php build/coverage/mysql.cov"
+                ],
+                "test:sqlite:coverage": [
+                    "mkdir -p build/coverage build/logs && XDEBUG_MODE=coverage DIVERGENCE_TEST_DB=tests-sqlite-memory vendor/bin/phpunit --coverage-php build/coverage/sqlite.cov"
+                ],
+                "test:pgsql:coverage": [
+                    "mkdir -p build/coverage build/logs && XDEBUG_MODE=coverage DIVERGENCE_TEST_DB=tests-pgsql vendor/bin/phpunit --coverage-php build/coverage/pgsql.cov"
+                ],
+                "coverage:merge": [
+                    "vendor/bin/phpcov merge --clover build/logs/clover.xml build/coverage"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -72,10 +108,12 @@
                 "orm"
             ],
             "support": {
-                "issues": "https://github.com/Divergence/framework/issues",
-                "source": "https://github.com/Divergence/framework/tree/v3.2.0"
+                "issues": "https://github.com/Divergence/framework/issues"
             },
-            "time": "2026-03-29T09:52:10+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "filp/whoops",

@@ -33,6 +33,7 @@ $application->add(new \ThePHPBench\Console\PharBuildControllerCommand());
 $application->add(new \ThePHPBench\Console\PharBuildBundleCommand());
 $application->add(new \ThePHPBench\Console\SystemManifestGenerateCommand());
 $application->add(new \ThePHPBench\Console\ModelGenerateCanonicalCommand());
+$application->add(new \ThePHPBench\Console\SourceExportDivergenceV3RuntimeCommand());
 $application->add(new \ThePHPBench\Console\SourceRefreshDivergenceV3Command());
 $application->add(new \ThePHPBench\Console\DbSetupMysqlCommand());
 $application->add(new \ThePHPBench\Console\UploadResultsCommand());

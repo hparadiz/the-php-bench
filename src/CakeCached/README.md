@@ -2,7 +2,7 @@
 
 ## Status
 
-This adapter inherits [Cake/Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/Cake/Tests.php) and is not rebuilt yet. It currently provides no distinct model implementation beyond the base Cake adapter.
+This adapter inherits [Cake/Tests.php](../Cake/Tests.php) and is not rebuilt yet. It currently provides no distinct model implementation beyond the base Cake adapter.
 
 ## Intended role
 

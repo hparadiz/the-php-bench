@@ -2,7 +2,7 @@
 
 ## Status
 
-This adapter still references [Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/Doctrine/Tests.php)'s removed `Entity\Employee` class and needs a full rebuild against the canonical model families.
+This adapter still references [Tests.php](Tests.php)'s removed `Entity\Employee` class and needs a full rebuild against the canonical model families.
 
 ## Implementation details to preserve during the rebuild
 
@@ -15,7 +15,7 @@ This adapter still references [Tests.php](/home/akujin/Divergence/php-orm-sql-be
 ## Rebuild requirements
 
 - Add one entity per canonical family under `src/Doctrine/Entity`.
-- Keep the canonical seeded field names from [ScenarioRegistry.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/Seed/ScenarioRegistry.php).
+- Keep the canonical seeded field names from [ScenarioRegistry.php](../Seed/ScenarioRegistry.php).
 - Be explicit about Doctrine types where they matter: `decimal`, `date`, `datetime`, boolean, and large text.
 - If Doctrine supports sequence or identity generation differently across MySQL, MariaDB, PostgreSQL, and SQLite, document the chosen strategy.
 

@@ -18,7 +18,7 @@ class UploadResultsCommand extends Command
 		{
 		$this
 			->addArgument('file', InputArgument::OPTIONAL, 'Path to a results CSV file (defaults to the latest file under results/)')
-			->addOption('server', null, InputOption::VALUE_REQUIRED, 'Upload API base URL', 'http://127.0.0.1:18090')
+			->addOption('server', null, InputOption::VALUE_REQUIRED, 'Upload API base URL', 'https://the-php-bench.technex.us')
 			->addOption('runner-uuid', null, InputOption::VALUE_REQUIRED, 'Runner UUID', 'runner-1')
 			->addOption('runner-name', null, InputOption::VALUE_REQUIRED, 'Runner display name', php_uname('n'))
 			->addOption('public-key', null, InputOption::VALUE_REQUIRED, 'Base64url Ed25519 public key or file path')

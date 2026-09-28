@@ -43,7 +43,7 @@ final class FrameworkCatalog
 		'DivergenceV3' => [
 			'display_name' => 'Divergence',
 			'package_name' => 'divergence/divergence',
-			'release_version' => 'v3.2.0',
+			'release_version' => 'v3.3.0',
 		],
 		'DivergenceV3Local' => [
 			'display_name' => 'Divergence',

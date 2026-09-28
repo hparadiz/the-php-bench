@@ -2,7 +2,7 @@
 
 ## Status
 
-This is the second adapter rebuilt for the new benchmark families. The current model classes live in [Model](/home/akujin/Divergence/php-orm-sql-benchmarks/src/DivergenceV3/Model), and [ModelRegistry.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/DivergenceV3/ModelRegistry.php) maps canonical family ids to those classes.
+This is the second adapter rebuilt for the new benchmark families. The current model classes live in [Model](Model), and [ModelRegistry.php](ModelRegistry.php) maps canonical family ids to those classes.
 
 ## Implemented model families
 
@@ -16,7 +16,7 @@ This is the second adapter rebuilt for the new benchmark families. The current m
 
 - The models use `DivergenceReflections\Models\ActiveRecord` plus attribute-based `#[Column(...)]` metadata.
 - Index definitions are declared per model in `public static $indexes`.
-- `StringVariable` is aligned to the canonical seeded schema and is the first active scenario wired into [Tests.php](/home/akujin/Divergence/php-orm-sql-benchmarks/src/DivergenceV3/Tests.php).
+- `StringVariable` is aligned to the canonical seeded schema and is the first active scenario wired into [Tests.php](Tests.php).
 - The current harness verifies updates against the `title` field rather than the old `Employee.last_name` field.
 
 ## Known type notes
