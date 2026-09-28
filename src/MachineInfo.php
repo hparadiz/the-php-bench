@@ -29,11 +29,11 @@ final class MachineInfo
 	 */
 	public static function generateManifest() : array
 		{
-		return self::baselineInfo() + [
+		return \array_replace(self::baselineInfo(), [
 			'machine_memory_modules' => self::memoryModules(),
 			'system_manifest_version' => '1',
 			'system_manifest_generated_at' => \date('c'),
-		];
+		]);
 		}
 
 	/**
